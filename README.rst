@@ -1,6 +1,8 @@
 Bugzilla Dashboard
 ==================
 
+A "release readiness" and work prioritization dashboard for Bugzilla users.
+
 Development
 -----------
 
