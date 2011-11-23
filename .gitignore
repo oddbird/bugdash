@@ -1,0 +1,9 @@
+TAGS
+collected-assets/
+*.DS_Store
+*~
+*.pyc
+.sass-cache/
+bugdash/settings/local.py
+.livereload
+htmlcov/
