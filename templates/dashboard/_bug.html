@@ -1,0 +1,25 @@
+<article class="bug a{{ aid }} s{{ sid }}" id="bug{{ id }}">
+  <div class="meta">
+    <span class="severity s{{ sid }}">
+      {% if sid == 01 %}enhancement{% endif %}
+      {% if sid == 02 %}trivial{% endif %}
+      {% if sid == 03 %}minor{% endif %}
+      {% if sid == 04 %}normal{% endif %}
+      {% if sid == 05 %}major{% endif %}
+      {% if sid == 06 %}critical{% endif %}
+      {% if sid == 07 %}blocker{% endif %}
+    </span>
+    <span class="area a{{ aid }}">
+      {% if aid == 01 %}security{% endif %}
+      {% if aid == 02 %}performance{% endif %}
+      {% if aid == 03 %}stability{% endif %}
+      {% if aid == 04 %}feedback{% endif %}
+    </span>
+  </div>
+
+  <h4 class="title">need to fix all that stuff, you know.</h4>
+
+  {% if desc %}
+    <p class="desc">the stuff that isn't working on the main thing.</p>
+  {% endif %}
+</article>

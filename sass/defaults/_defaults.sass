@@ -29,19 +29,21 @@ a
 /* Headings ------------------------------------------------------------------
 
 h1
-  +adjust-font-size-to(21px)
+  +bold
 
 h1, h2
   @extend .allcaps
+  +adjust-font-size-to($medpx)
+  +trailer(1,$medpx)
 
 h3
-  font-weight: bold
+  @extend .allcaps
 
 h4
-  @extend .smallcaps
+  +bold
 
 h5, h6
-  font-style: italic
+  +italic
 
 /* Inline --------------------------------------------------------------------
 
@@ -90,8 +92,11 @@ pre, code, tt
 
 /* Block ---------------------------------------------------------------------
 
-p
+section, article, p
   +trailer
+
+section, article
+  padding-left: rhythm(1)
 
 pre
   padding: rhythm()
