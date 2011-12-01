@@ -1,6 +1,7 @@
 <article class="bug a{{ aid }} s{{ sid }}" id="bug{{ id }}">
-  <div class="meta">
-    <span class="severity s{{ sid }}">
+
+  <header class="bughead">
+    <div class="severity s{{ sid }}">
       {% if sid == 01 %}enhancement{% endif %}
       {% if sid == 02 %}trivial{% endif %}
       {% if sid == 03 %}minor{% endif %}
@@ -8,18 +9,29 @@
       {% if sid == 05 %}major{% endif %}
       {% if sid == 06 %}critical{% endif %}
       {% if sid == 07 %}blocker{% endif %}
-    </span>
+    </div>
+    <h4 class="bugtitle">
+      [<a href="http://bugzilla.mozilla.org/" class="bugid">#345908</a>]
+      need to fix all that stuff, you know.
+    </h4>
+  </header>
+
+  <div class="origin">
     <span class="area a{{ aid }}">
       {% if aid == 01 %}security{% endif %}
       {% if aid == 02 %}performance{% endif %}
       {% if aid == 03 %}stability{% endif %}
       {% if aid == 04 %}feedback{% endif %}
     </span>
+    <div class="product">
+      <span class="prodtitle">Firefox</span>,
+      <span class="component">Developer Tools</span>
+    </div>
   </div>
 
-  <h4 class="title">need to fix all that stuff, you know.</h4>
+  <p class="desc">
+    {% if desc %}the stuff that isn't working on the main thing.{% endif %}
+    [username, date-filed]
+  </p>
 
-  {% if desc %}
-    <p class="desc">the stuff that isn't working on the main thing.</p>
-  {% endif %}
 </article>
