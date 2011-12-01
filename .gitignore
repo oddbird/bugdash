@@ -4,6 +4,6 @@ collected-assets/
 *~
 *.pyc
 .sass-cache/
-bugdash/settings/local.py
+src/bugdash/settings/local.py
 .livereload
 htmlcov/
