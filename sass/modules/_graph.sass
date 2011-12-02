@@ -8,15 +8,16 @@
   +hide-text
   min-width: rhythm(1)
 
-  &.a1
-    background: green
-  &.a2
-    background: red
-  &.a3
-    background: orange
-  &.a4
-    background: blue
-
   @for $i from 1 through 100
     &.n#{$i}
       width: rhythm($i)
+
+.areasummary, .area
+  &.a1
+    background: rgba(green,.5)
+  &.a2
+    background: rgba(red,.5)
+  &.a3
+    background: rgba(#f88,.5)
+  &.a4
+    background: rgba(blue,.5)

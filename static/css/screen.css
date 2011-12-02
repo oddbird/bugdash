@@ -241,10 +241,6 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 .graph > li { vertical-align: baseline; }
 
 .areasummary { text-indent: -119988px; overflow: hidden; text-align: left; min-width: 1.2em; }
-.areasummary.a1 { background: green; }
-.areasummary.a2 { background: red; }
-.areasummary.a3 { background: orange; }
-.areasummary.a4 { background: blue; }
 .areasummary.n1 { width: 1.2em; }
 .areasummary.n2 { width: 2.4em; }
 .areasummary.n3 { width: 3.6em; }
@@ -345,6 +341,11 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 .areasummary.n98 { width: 117.6em; }
 .areasummary.n99 { width: 118.8em; }
 .areasummary.n100 { width: 120em; }
+
+.areasummary.a1, .area.a1 { background: rgba(0, 128, 0, 0.5); }
+.areasummary.a2, .area.a2 { background: rgba(255, 0, 0, 0.5); }
+.areasummary.a3, .area.a3 { background: rgba(255, 136, 136, 0.5); }
+.areasummary.a4, .area.a4 { background: rgba(0, 0, 255, 0.5); }
 
 .chick, .severity, .area { font-size: 0.833em; line-height: 1.44em; padding: 0 0.36em; background: #f2f2f2; }
 
