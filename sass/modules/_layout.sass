@@ -11,6 +11,26 @@ body > div
 header[role="banner"]
   +leader
   +trailer(2)
+  +pie-clearfix
+  h1
+    +media-columns(false,4 9,4 12)
+
+.views
+  +media-columns(false,5 9,8 12,omega)
+  text-align: right
+  h2
+    +gone
+  a
+    #{$link}
+      +adjust-font-size-to($smallpx)
+      +inline-block
+      +border-radius
+      padding: 0 rhythm(.5,$smallpx)
+      &.active
+        +box-shadow(rgba($mid,$xxsmall) 0 0 2px inset)
+        background: $lightest
+        color: $base
+
 
 footer[role="contentinfo"]
   +adjust-font-size-to($smallpx)
