@@ -23,8 +23,7 @@
     +trailing-border(1px,.5)
 
 .bughead
-  +float(left)
-  width: 75%
+  +media-columns(false,6 9,9 12)
 
 .severity
   @extend .chick
@@ -32,15 +31,19 @@
   margin-right: rhythm(.25,$smallpx)
 
 .origin
-  +float(right)
-  text-align: right
-  width: 25%
+  +media-columns(false,3 9,3 12,omega)
+  +media-small
+    text-align: right
 
 .area
   @extend .chick
+  +media-tiny
+    margin-right: rhythm(.25,$smallpx)
 
 .product
   @extend .smallprint
+  +media-tiny
+    display: inline
 
 .desc
   @extend .smallprint

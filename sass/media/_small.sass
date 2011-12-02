@@ -1,5 +1,7 @@
-@media only screen and (min-width: 28em)
-  @import small/s-add
+// +media-small
 
-@media only screen and (min-width: 28em) and (max-width: 47em)
-  @import small/s-only
++media-small-only
+  $total-cols: 9
+
+  header[role="banner"], div[role="main"], footer[role="contentinfo"]
+    +full

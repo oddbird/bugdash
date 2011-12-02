@@ -1,3 +1,13 @@
+=container($n:false)
+  +pie-clearfix
+  margin: auto
+  width: columns-width($n)
+  max-width: 100%
+
+=susy-grid-background($n:false)
+  $cols: $n or $total-cols
+  +column-grid-background($cols, $col-width, $gutter-width, $side-gutter-width, $force-fluid: true)
+
 /* Layout --------------------------------------------------------------------
 
 .full
