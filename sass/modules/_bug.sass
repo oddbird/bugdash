@@ -12,18 +12,19 @@
 // objects
 
 .week, .day
-  +trailer
+  +trailer(.5)
 
 .bug
   +clearfix
   +leading-border(1px,.5)
   +padding-trailer(.5)
   border-color: $lightest
-  &:last-child
-    +trailing-border(1px,.5)
+  &:first-of-type
+    +padding-leader(.5)
+    border: 0
 
 .bughead
-  +media-columns(false,6 9,9 12)
+  +media-columns(false,6 9,7 10)
 
 .severity
   @extend .chick
@@ -31,7 +32,7 @@
   margin-right: rhythm(.25,$smallpx)
 
 .origin
-  +media-columns(false,3 9,3 12,omega)
+  +media-columns(false,3 9,3 10,omega)
   +media-small
     text-align: right
 

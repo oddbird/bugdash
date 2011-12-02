@@ -1,0 +1,18 @@
+body > div
+  +container(4)
+  +susy-grid-background(4)
+  +media-small
+    +container(9)
+    +susy-grid-background(9)
+  +media-medium
+    +container(12)
+    +susy-grid-background(12)
+
+header[role="banner"]
+  +leader
+  +trailer(2)
+
+footer[role="contentinfo"]
+  +adjust-font-size-to($smallpx)
+  +leader(2,$smallpx)
+  +trailer(2,$smallpx)

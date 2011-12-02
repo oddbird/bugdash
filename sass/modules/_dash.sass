@@ -1,0 +1,13 @@
+.week
+  +clearfix
+
+.exact, .relative
+  display: block
+.relative
+  +adjust-font-size-to($smallpx)
+  +italic
+  text-transform: lowercase
+
+.overdue
+  +padding-trailer(.5)
+  +background-image(linear-gradient(bottom, rgba(red,.125), rgba(red,0) rhythm(1)))

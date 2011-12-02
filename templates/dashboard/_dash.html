@@ -1,7 +1,13 @@
-<section class="week overdue" id="overdue">
+<section class="week overdue closed" id="overdue">
   <h2 class="weektitle">
-    <span class="relative">overdue</span>
+    <span class="exact">overdue</span>
   </h2>
+
+  <ul class="graph">
+    <li class="areasummary a2 n1" title="performance: 1">Performance: 1
+    </li><li class="areasummary a3 n2" title="stability: 2">Stability: 2
+    </li><li class="areasummary a4 n1" title="feedback: 1">Feedback: 1</li>
+  </ul>
 
   <section class="day" id="nov22">
     <h3 class="daytitle">
@@ -11,18 +17,32 @@
       </time>
     </h3>
 
-    {% include "dashboard/_bug.html" with id=03 aid=03 sid=05 desc='1' %}
-    {% include "dashboard/_bug.html" with id=04 aid=04 sid=01 %}
+    <ul class="graph">
+      <li class="areasummary a2 n1" title="performance: 1">Performance: 1
+      </li><li class="areasummary a3 n2" title="stability: 2">Stability: 2
+      </li><li class="areasummary a4 n1" title="feedback: 1">Feedback: 1</li>
+    </ul>
+
+    {% include "dashboard/_bug.html" with id=1 aid=3 sid=5 desc='1' %}
+    {% include "dashboard/_bug.html" with id=2 aid=4 sid=4 %}
+    {% include "dashboard/_bug.html" with id=3 aid=3 sid=3 desc='1' %}
+    {% include "dashboard/_bug.html" with id=4 aid=2 sid=1 %}
   </section>
 </section>
 
-<section class="week" id="w01">
+<section class="week closed" id="w01">
   <h2 class="weektitle">
     <time class="due">
       <span class="exact">Nov 20-26</span>
       <span class="relative">this week</span>
     </time>
   </h2>
+
+  <ul class="graph">
+    <li class="areasummary a1 n1" title="security: 1">Security: 1
+    </li><li class="areasummary a2 n1" title="performance: 1">Performance: 1
+    </li><li class="areasummary a3 n2" title="stability: 2">Stability: 2</li>
+  </ul>
 
   <section class="day today" id="nov23">
     <h3 class="daytitle">
@@ -31,8 +51,14 @@
         <span class="relative">today</span>
       </time>
     </h3>
-    {% include "dashboard/_bug.html" with id=05 aid=01 sid=03 desc="1" %}
-    {% include "dashboard/_bug.html" with id=06 aid=03 sid=04 %}
+
+    <ul class="graph">
+      <li class="areasummary a1 n1" title="security: 1">Security: 1
+      </li><li class="areasummary a3 n1" title="stability: 1">Stability: 1</li>
+    </ul>
+
+    {% include "dashboard/_bug.html" with id=5 aid=1 sid=3 desc="1" %}
+    {% include "dashboard/_bug.html" with id=6 aid=3 sid=4 %}
   </section>
 
   <section class="day today" id="nov24">
@@ -42,7 +68,13 @@
         <span class="relative">tomorrow</span>
       </time>
     </h3>
-    {% include "dashboard/_bug.html" with id=07 aid=02 sid=07 %}
-    {% include "dashboard/_bug.html" with id=08 aid=03 sid=04 %}
+
+    <ul class="graph">
+      <li class="areasummary a2 n1" title="performance: 1">Performance: 1
+      </li><li class="areasummary a3 n1" title="stability: 1">Stability: 1</li>
+    </ul>
+
+    {% include "dashboard/_bug.html" with id=7 aid=2 sid=7 %}
+    {% include "dashboard/_bug.html" with id=8 aid=3 sid=4 %}
   </section>
 </section>

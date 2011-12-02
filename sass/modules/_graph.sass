@@ -1,4 +1,22 @@
-.weektitle, .daytitle
-  &::after
-    content: "[graph]"
-    color: $lighter
+.graph
+  +inline-block-list
+  > li
+    vertical-align: baseline
+
+
+.areasummary
+  +hide-text
+  min-width: rhythm(1)
+
+  &.a1
+    background: green
+  &.a2
+    background: red
+  &.a3
+    background: orange
+  &.a4
+    background: blue
+
+  @for $i from 1 through 100
+    &.n#{$i}
+      width: rhythm($i)
