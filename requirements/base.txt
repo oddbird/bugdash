@@ -10,3 +10,7 @@ django-icanhaz==0.2.0
 django-html5accordion==0.1.6
 django-messages-ui==0.1.4
 django-ajax-loading-overlay==0.1.1
+
+remoteobjects==1.1.1.moz4
+httplib2==0.7.2
+simplejson==2.2.1
