@@ -1,5 +1,0 @@
---find-links https://raw.github.com/oddbird/bugdash/master/requirements/dist/index.html
-
--r base.txt
-
-django-redis-cache==0.5.1

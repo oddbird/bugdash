@@ -1,6 +1,0 @@
-requirements/dist/
-sass/
-static/
-extensions/
-bin/
-src/bugdash/settings/local.py
