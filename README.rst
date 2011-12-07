@@ -48,13 +48,13 @@ can still be placed in ``src/bugdash/settings/local.py``.
 You can run ``./manage.py checksecure`` to verify that settings are correctly
 configured for a secure deployment.
 
-This app also uses the `staticfiles contrib app`_ in Django 1.3 for
-collecting static assets from reusable components into a single
-directory for production serving.  Under "runserver" in development
-this is handled automatically.  In production, run ``./manage.py
-collectstatic`` to collect all static assets into the
-``collected-assets`` directory (or whatever ``STATIC_ROOT`` is set to
-in ``settings_local.py``), and make those collected assets available
+This app also uses the `staticfiles contrib app`_ in Django 1.3 for collecting
+static assets from reusable components into a single directory for production
+serving.  Under "runserver" in development this is handled automatically.  In
+production, run ``./manage.py collectstatic`` followed by ``./manage.py
+compress`` to collect and compress all static assets into the
+``collected-assets`` directory (or whatever ``STATIC_ROOT`` is set to in
+``src/bugdash/settings/local.py``), and make those collected assets available
 by HTTP at the ``STATIC_URL`` setting.
 
 .. _staticfiles contrib app: http://docs.djangoproject.com/en/1.3/howto/static-files/

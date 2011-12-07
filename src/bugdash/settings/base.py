@@ -159,3 +159,10 @@ COMPRESS_OFFLINE_CONTEXT = {
 INSTALLED_APPS += ["djangosecure"]
 MIDDLEWARE_CLASSES.insert(0, "djangosecure.middleware.SecurityMiddleware")
 SESSION_COOKIE_HTTPONLY = True
+
+
+BUGZILLA_API_ROOT = "https://api-dev.bugzilla.mozilla.org/test/1.0"
+BUGZILLA_API_SSL_CA_CERT = join(BASE_PATH, "GeoTrust_Global_CA.crt")
+BUGZILLA_BUG_URL_BASE = "https://landfill.bugzilla.org/bzapi_sandbox/show_bug.cgi?id="
+BUGDASH_WHITEBOARD_RE = r"\[(?P<deadline>\d{4}-\d{1,2}-\d{1,2}) (?P<area>[^]]+)\]"
+BUGDASH_AREAS = []

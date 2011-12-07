@@ -1,80 +1,33 @@
-<section class="week overdue closed" id="overdue">
+{% for interval in intervals %}
+<section class="week {% if interval.overdue %}overdue {% endif %}closed">
   <h2 class="weektitle">
-    <span class="exact">overdue</span>
+    <span class="exact">{{ interval.title }}</span>
   </h2>
 
   <ul class="graph">
-    <li class="areasummary a2 n1" title="performance: 1">Performance: 1
-    </li><li class="areasummary a3 n2" title="stability: 2">Stability: 2
-    </li><li class="areasummary a4 n1" title="feedback: 1">Feedback: 1</li>
+    {% for area in interval.summary %}
+    <li class="areasummary a{{ area.id }} n{{ area.bugcount }}" title="{{ area.name }}: {{ area.bugcount }}">{{ area.name }}: {{ area.bugcount }}</li>
+    {% endfor %}
   </ul>
 
-  <section class="day" id="nov22">
+  {% for day in interval.days %}
+  <section class="day">
     <h3 class="daytitle">
       <time class="due">
-        <span class="exact">Nov 22</span>
-        <span class="relative">yesterday</span>
+        <span class="exact">{{ day.date|date:"b j" }}</span>
       </time>
     </h3>
 
     <ul class="graph">
-      <li class="areasummary a2 n1" title="performance: 1">Performance: 1
-      </li><li class="areasummary a3 n2" title="stability: 2">Stability: 2
-      </li><li class="areasummary a4 n1" title="feedback: 1">Feedback: 1</li>
+      {% for area in day.summary %}
+      <li class="areasummary a{{ area.id }} n{{ area.bugcount }}" title="{{ area.name }}: {{ area.bugcount }}">{{ area.name }}: {{ area.bugcount }}</li>
+      {% endfor %}
     </ul>
 
+    {% for bug in day.bugs %}
     {% include "dashboard/_bug.html" with id=1 aid=3 sid=5 desc='1' %}
-    {% include "dashboard/_bug.html" with id=2 aid=4 sid=4 %}
-    {% include "dashboard/_bug.html" with id=3 aid=3 sid=3 desc='1' %}
-    {% include "dashboard/_bug.html" with id=4 aid=2 sid=1 %}
+    {% endfor %}
   </section>
+  {% endfor %}
 </section>
-
-<section class="week closed" id="w01">
-  <h2 class="weektitle">
-    <time class="due">
-      <span class="exact">Nov 20-26</span>
-      <span class="relative">this week</span>
-    </time>
-  </h2>
-
-  <ul class="graph">
-    <li class="areasummary a1 n1" title="security: 1">Security: 1
-    </li><li class="areasummary a2 n1" title="performance: 1">Performance: 1
-    </li><li class="areasummary a3 n2" title="stability: 2">Stability: 2</li>
-  </ul>
-
-  <section class="day today" id="nov23">
-    <h3 class="daytitle">
-      <time class="due">
-        <span class="exact">Nov 23</span>
-        <span class="relative">today</span>
-      </time>
-    </h3>
-
-    <ul class="graph">
-      <li class="areasummary a1 n1" title="security: 1">Security: 1
-      </li><li class="areasummary a3 n1" title="stability: 1">Stability: 1</li>
-    </ul>
-
-    {% include "dashboard/_bug.html" with id=5 aid=1 sid=3 desc="1" %}
-    {% include "dashboard/_bug.html" with id=6 aid=3 sid=4 %}
-  </section>
-
-  <section class="day today" id="nov24">
-    <h3 class="daytitle">
-      <time class="due">
-        <span class="exact">Nov 24</span>
-        <span class="relative">tomorrow</span>
-      </time>
-    </h3>
-
-    <ul class="graph">
-      <li class="areasummary a2 n1" title="performance: 1">Performance: 1
-      </li><li class="areasummary a3 n1" title="stability: 1">Stability: 1</li>
-    </ul>
-
-    {% include "dashboard/_bug.html" with id=7 aid=2 sid=7 %}
-    {% include "dashboard/_bug.html" with id=8 aid=3 sid=4 %}
-  </section>
-</section>
+{% endfor %}
