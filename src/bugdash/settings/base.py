@@ -151,11 +151,6 @@ INSTALLED_APPS += ["compressor"]
 COMPRESS_CSS_FILTERS = ["compressor.filters.css_default.CssAbsoluteFilter",
                         "compressor.filters.cssmin.CSSMinFilter"]
 
-COMPRESS_OFFLINE_CONTEXT = {
-    "STATIC_URL": STATIC_URL
-    }
-
-
 INSTALLED_APPS += ["djangosecure"]
 MIDDLEWARE_CLASSES.insert(0, "djangosecure.middleware.SecurityMiddleware")
 SESSION_COOKIE_HTTPONLY = True
