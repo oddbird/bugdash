@@ -140,7 +140,7 @@ def format_date_range(start, end, today=None):
             ret = "%s %s" % (ret, start.year)
     else:
         ret = "%s - %s" % (
-            format(start, "b j Y"), format(end, "b j Y"))
+            format(start, "b j"), format(end, "b j"))
 
     return ret
 

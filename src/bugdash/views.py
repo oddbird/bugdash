@@ -8,5 +8,5 @@ from .bugs import Dashboard
 def home(request):
     agent = DashboardAgent("cjm46543@yahoo.com", "testpw") # @@@
     bugs = agent.get_bugs(cc="cjm46543@yahoo.com") # @@@
-    intervals = Dashboard(bugs, 7)
+    intervals = Dashboard(bugs, 28)
     return TemplateResponse(request, "home.html", {"intervals": intervals})

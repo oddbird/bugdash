@@ -1,5 +1,3 @@
-import os.path
-
 from django.conf import settings
 
 from bugzilla.agents import BugzillaAgent
