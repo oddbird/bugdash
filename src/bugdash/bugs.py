@@ -158,6 +158,15 @@ class BugCollection(object):
 
 
     @property
+    def empty(self):
+        """
+        True if this collection has no bugs in it.
+
+        """
+        return not self._bugs
+
+
+    @property
     def bugs(self):
         """
         List of bugs in this collection, sorted from most to least severe.

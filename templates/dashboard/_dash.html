@@ -1,7 +1,7 @@
 <a href="#" class="bugtoggle">show bugs »</a>
 
 {% for interval in intervals %}
-<section class="{% if interval.overdue %}overdue {% else %}week {% endif %}closed">
+<section class="{% if interval.overdue %}overdue {% else %}week {% endif %}{% if interval.empty %}empty {% endif %}closed">
   <h2 class="{% if interval.overdue %}overduetitle{% else %}weektitle{% endif %}">
     <span class="exact">{{ interval.title }}</span>
   </h2>
@@ -13,7 +13,7 @@
   </ul>
 
   {% for day in interval.days %}
-  <section class="{% if interval.overdue %}overdueday {% else %}day {% endif %}closed">
+  <section class="{% if interval.overdue %}overdueday {% else %}day {% endif %}{% if interval.empty %}empty {% endif %}closed">
     <h3 class="{% if interval.overdue %}overduedaytitle{% else %}daytitle{% endif %}">
       <time class="due">
         <span class="exact">{{ day.date|date:"b j" }}</span>
