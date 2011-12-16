@@ -238,19 +238,27 @@ header[role="banner"]:after { content: ""; display: table; clear: both; }
 
 footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top: 2.88em; margin-bottom: 2.88em; }
 
-.bugtoggle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; font-size: 0.833em; line-height: 1.44em; margin-bottom: 0.72em; text-align: right; }
+.week, .day, .overdue { overflow: hidden; *zoom: 1; clear: both; }
 
-.week, .day { overflow: hidden; *zoom: 1; clear: both; }
-
-@media (min-width: 960px) { .weektitle, .daytitle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; margin-bottom: 0em; text-align: right; }
+@media (min-width: 960px) { .bugtoggle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; font-size: 0.833em; line-height: 1.44em; margin-bottom: 0.72em; text-align: right; }
+  .weektitle, .daytitle, .overduetitle, .overduedaytitle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; margin-bottom: 0em; text-align: right; }
   .graph { display: inline; float: left; width: 83.051%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; }
   .bug { display: inline; float: left; width: 83.051%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; } }
 .exact, .relative { display: block; }
 
 .relative { font-size: 0.833em; line-height: 1.44em; font-style: italic; text-transform: lowercase; }
 
-.overdue { border-style: solid; border-width: 0.063em; padding: 0.538em; margin: 0 -0.6em; border-color: red; }
-.overdue .weektitle { color: red; font-weight: bold; }
+.overdue { border-style: solid; border-width: 0.063em; padding: 0.538em; margin: 0 -0.6em 0.6em; border-color: red; }
+
+.overduetitle { background: url('../images/ui/angle_right.png?1322081148') no-repeat scroll 0.3em 0.3em; cursor: pointer; color: red; font-weight: bold; }
+
+.overdueday .graph { display: none; }
+
+.overduedaytitle { font-size: 0.833em; line-height: 1.44em; padding-top: 0.6em; }
+
+.overdue.closed .overdueday { display: none; }
+
+.overdue.open .overduetitle { background-image: url('../images/ui/angle_down.png?1322081148'); }
 
 .graph { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
 .graph li { list-style-image: none; list-style-type: none; margin-left: 0px; display: -moz-inline-box; -moz-box-orient: vertical; display: inline-block; vertical-align: middle; *vertical-align: auto; white-space: nowrap; }
@@ -374,8 +382,8 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 .week:after, .day:after { content: ""; display: table; clear: both; }
 
 .bug { overflow: hidden; *zoom: 1; border-top-style: solid; border-top-width: 0.063em; padding-top: 0.538em; padding-bottom: 0.6em; border-color: #f2f2f2; }
-.day:last-of-type .bug:last-of-type { border-bottom-style: solid; border-bottom-width: 0.063em; padding-bottom: 0.538em; }
-.overdue .day:last-of-type .bug:last-of-type { padding-bottom: 0; border-bottom: 0; }
+.day:last-of-type .bug:last-of-type, .overdueday:last-of-type .bug:last-of-type { border-bottom-style: solid; border-bottom-width: 0.063em; padding-bottom: 0.538em; }
+.overdue .day:last-of-type .bug:last-of-type, .overdue .overdueday:last-of-type .bug:last-of-type { padding-bottom: 0; border-bottom: 0; }
 
 @media (min-width: 480px) and (max-width: 959px) { .bughead { display: inline; float: left; width: 65.909%; margin-right: 2.273%; } }
 @media (min-width: 960px) { .bughead { display: inline; float: left; width: 69.388%; margin-right: 2.041%; } }
@@ -401,6 +409,7 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
   .weekview .week.open .weektitle { background-image: url('../images/ui/angle_down.png?1322081148'); } }
 
 @media (min-width: 960px) { .dayview .day { margin-bottom: 0.6em; }
+  .dayview .week { margin-bottom: 0em; }
   .dayview .daytitle { background: url('../images/ui/angle_right.png?1322081148') no-repeat scroll 0.3em 0.3em; cursor: pointer; }
   .dayview .weektitle { display: none; }
   .dayview .overdue .weektitle { display: inline; float: left; width: 100%; margin-right: 1.695%; margin-bottom: 0.6em; text-align: left; }

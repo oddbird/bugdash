@@ -10,16 +10,20 @@ function showBugs() {
             $(this).parent().toggleClass('open').toggleClass('closed');
         };
     });
+
+    $('.overduetitle').click(function() {
+        $(this).parent().toggleClass('open').toggleClass('closed');
+    });
 }
 
 function bugToggle() {
     $('.bugtoggle').click(function() {
         $(this).toggleClass('open');
         if ($(this).hasClass('open')) {
-            $('.weekview .week, .dayview .day').addClass('open').removeClass('closed');
+            $('.weekview .week, .dayview .day, .overdue').addClass('open').removeClass('closed');
             $(this).text('« hide bugs');
         } else {
-            $('.weekview .week, .dayview .day').removeClass('open').addClass('closed');
+            $('.weekview .week, .dayview .day, .overdue').removeClass('open').addClass('closed');
             $(this).text('show bugs »');
         }
         return false;

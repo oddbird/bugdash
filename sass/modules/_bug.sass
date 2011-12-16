@@ -23,11 +23,12 @@
   +leading-border(1px,.5)
   +padding-trailer(.5)
   border-color: $lightest
-  .day:last-of-type &:last-of-type
-    +trailing-border(1px,.5)
-    .overdue &
-      padding-bottom: 0
-      border-bottom: 0
+  .day:last-of-type &, .overdueday:last-of-type &
+    &:last-of-type
+      +trailing-border(1px,.5)
+      .overdue &
+        padding-bottom: 0
+        border-bottom: 0
 
 .bughead
   +media-columns(false,6 9,7 10)
