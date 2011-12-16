@@ -237,6 +237,8 @@ header[role="banner"] h1 { margin-bottom: 0em; }
 .views a:link, .views a:visited { *display: inline; }
 .views a:link.active, .views a:visited.active { -moz-box-shadow: rgba(128, 128, 128, 0.579) 0 0 2px inset; -webkit-box-shadow: rgba(128, 128, 128, 0.579) 0 0 2px inset; -o-box-shadow: rgba(128, 128, 128, 0.579) 0 0 2px inset; box-shadow: rgba(128, 128, 128, 0.579) 0 0 2px inset; background: #f2f2f2; color: #404040; }
 
+[role="main"] { -moz-background-size: 100% auto; -webkit-background-size: 100% auto; -o-background-size: 100% auto; background-size: 100% auto; background: url('../images/graphsketch.png?1324069009') no-repeat scroll top; padding-top: 18em; }
+
 footer[role="contentinfo"] { margin-top: 2.4em; margin-bottom: 2.4em; }
 
 .week, .day, .overdue, .overdueday { overflow: hidden; *zoom: 1; clear: both; }
