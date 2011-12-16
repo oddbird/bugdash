@@ -1,4 +1,4 @@
-.week, .day, .overdue
+.week, .day, .overdue, .overdueday
   +clearfix
   clear: both
 
@@ -7,8 +7,7 @@
   .bugtoggle
     +columns(2,12)
     +omega(12)
-    +adjust-font-size-to($smallpx)
-    +trailer(.5,$smallpx)
+    +trailer(.25)
     text-align: right
 
   .weektitle, .daytitle, .overduetitle, .overduedaytitle
@@ -25,16 +24,13 @@
     +omega(12)
 
 
-.exact, .relative
-  display: block
-.relative
+.exact
   +adjust-font-size-to($smallpx)
-  +italic
-  text-transform: lowercase
+  display: block
 
 .overdue
-  +rhythm-borders(1px,.5)
-  margin: 0 0 - rhythm(.5) rhythm(.5)
+  +rhythm-borders(1px,.25)
+  margin: 0 0 - rhythm(.25) rhythm(.25)
   border-color: red
 
 .overduetitle
@@ -48,8 +44,7 @@
     display: none
 
 .overduedaytitle
-  +adjust-font-size-to($smallpx)
-  +padding-leader(.5)
+  +padding-leader(.25)
 
 // open/closed
 .overdue.closed

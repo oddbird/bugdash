@@ -9,11 +9,12 @@ body > div
     +susy-grid-background(12)
 
 header[role="banner"]
-  +leader
-  +trailer(2)
+  +leader(.5)
+  +trailer
   +pie-clearfix
   h1
     +media-columns(false,4 9,4 12)
+    +trailer(0)
 
 .views
   +media-columns(false,5 9,8 12,omega)
@@ -23,10 +24,9 @@ header[role="banner"]
     +gone
   a
     #{$link}
-      +adjust-font-size-to($smallpx)
       +inline-block
       +border-radius
-      padding: 0 rhythm(.5,$smallpx)
+      padding: 0 rhythm(.5)
       &.active
         +box-shadow(rgba($mid,$xxsmall) 0 0 2px inset)
         background: $lightest
@@ -34,6 +34,5 @@ header[role="banner"]
 
 
 footer[role="contentinfo"]
-  +adjust-font-size-to($smallpx)
-  +leader(2,$smallpx)
-  +trailer(2,$smallpx)
+  +leader(2)
+  +trailer(2)
