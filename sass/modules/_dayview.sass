@@ -1,0 +1,26 @@
+.dayview
+  +media-medium
+
+    .day
+      +trailer(.5)
+
+    .daytitle
+      background: image-url('ui/angle_right.png') no-repeat scroll rhythm(.25) rhythm(.25)
+      cursor: pointer
+
+    .weektitle
+      display: none
+    .overdue .weektitle
+      +columns(12,12)
+      +trailer(.5)
+      text-align: left
+    .week > .graph
+      display: none
+
+    // open/closed
+    .day.closed
+      .bug
+        display: none
+    .day.open
+      .daytitle
+        background-image: image-url('ui/angle_down.png')

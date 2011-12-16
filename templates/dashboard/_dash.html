@@ -1,4 +1,4 @@
-<a href="#" class="bugtoggle">show/hide bugs</a>
+<a href="#" class="bugtoggle">show bugs »</a>
 
 {% for interval in intervals %}
 <section class="week {% if interval.overdue %}overdue {% endif %}closed">
@@ -13,7 +13,7 @@
   </ul>
 
   {% for day in interval.days %}
-  <section class="day">
+  <section class="day closed">
     <h3 class="daytitle">
       <time class="due">
         <span class="exact">{{ day.date|date:"b j" }}</span>

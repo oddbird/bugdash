@@ -240,8 +240,11 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 
 .bugtoggle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; font-size: 0.833em; line-height: 1.44em; margin-bottom: 0.72em; text-align: right; }
 
-.week { overflow: hidden; *zoom: 1; }
+.week, .day { overflow: hidden; *zoom: 1; clear: both; }
 
+@media (min-width: 960px) { .weektitle, .daytitle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; margin-bottom: 0em; text-align: right; }
+  .graph { display: inline; float: left; width: 83.051%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; }
+  .bug { display: inline; float: left; width: 83.051%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; } }
 .exact, .relative { display: block; }
 
 .relative { font-size: 0.833em; line-height: 1.44em; font-style: italic; text-transform: lowercase; }
@@ -390,13 +393,17 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 
 .desc { margin: 0; clear: left; }
 
-@media (min-width: 960px) { .weekview .weektitle, .weekview .daytitle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; margin-bottom: 0em; text-align: right; }
-  .weekview .weektitle { background: url('../images/ui/angle_right.png?1322081148') no-repeat scroll 0.3em 0.3em; cursor: pointer; }
-  .weekview .graph { display: inline; float: left; width: 83.051%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; }
-  .weekview .week, .weekview .day { clear: both; }
+@media (min-width: 960px) { .weekview .weektitle { background: url('../images/ui/angle_right.png?1322081148') no-repeat scroll 0.3em 0.3em; cursor: pointer; }
   .weekview .day .exact { font-size: 0.833em; line-height: 1.44em; }
   .weekview .day .relative, .weekview .day .graph { display: none; }
-  .weekview .day .bug { display: inline; float: left; width: 83.051%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; }
   .weekview .daytitle { padding-top: 0.6em; }
-  .weekview .closed .day, .weekview .closed .relative { display: none; }
-  .weekview .open .weektitle { background-image: url('../images/ui/angle_down.png?1322081148'); } }
+  .weekview .week.closed .day { display: none; }
+  .weekview .week.open .weektitle { background-image: url('../images/ui/angle_down.png?1322081148'); } }
+
+@media (min-width: 960px) { .dayview .day { margin-bottom: 0.6em; }
+  .dayview .daytitle { background: url('../images/ui/angle_right.png?1322081148') no-repeat scroll 0.3em 0.3em; cursor: pointer; }
+  .dayview .weektitle { display: none; }
+  .dayview .overdue .weektitle { display: inline; float: left; width: 100%; margin-right: 1.695%; margin-bottom: 0.6em; text-align: left; }
+  .dayview .week > .graph { display: none; }
+  .dayview .day.closed .bug { display: none; }
+  .dayview .day.open .daytitle { background-image: url('../images/ui/angle_down.png?1322081148'); } }

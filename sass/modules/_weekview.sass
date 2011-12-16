@@ -1,39 +1,24 @@
 .weekview
   +media-medium
 
-    .weektitle, .daytitle
-      +columns(2,12)
-      +trailer(0)
-      text-align: right
-
     .weektitle
       background: image-url('ui/angle_right.png') no-repeat scroll rhythm(.25) rhythm(.25)
       cursor: pointer
-
-    .graph
-      +columns(10,12)
-      +omega(12)
-
-    .week, .day
-      clear: both
 
     .day
       .exact
         +adjust-font-size-to($smallpx)
       .relative, .graph
         display: none
-      .bug
-        +columns(10,12)
-        +omega(12)
 
     .daytitle
       +padding-leader(.5)
 
 
     // open/closed
-    .closed
-      .day, .relative
+    .week.closed
+      .day
         display: none
-    .open
+    .week.open
       .weektitle
         background-image: image-url('ui/angle_down.png')
