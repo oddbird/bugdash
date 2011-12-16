@@ -238,13 +238,16 @@ header[role="banner"]:after { content: ""; display: table; clear: both; }
 
 footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top: 2.88em; margin-bottom: 2.88em; }
 
+.bugtoggle { display: inline; float: left; width: 15.254%; margin-right: 1.695%; display: inline; float: right; margin-right: 0; #margin-left: -1em; font-size: 0.833em; line-height: 1.44em; margin-bottom: 0.72em; text-align: right; }
+
 .week { overflow: hidden; *zoom: 1; }
 
 .exact, .relative { display: block; }
 
 .relative { font-size: 0.833em; line-height: 1.44em; font-style: italic; text-transform: lowercase; }
 
-.overdue { padding-bottom: 0.6em; background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(255, 0, 0, 0.125)), color-stop(100%, rgba(255, 0, 0, 0))); background-image: -webkit-linear-gradient(bottom, rgba(255, 0, 0, 0.125), rgba(255, 0, 0, 0) 1.2em); background-image: -moz-linear-gradient(bottom, rgba(255, 0, 0, 0.125), rgba(255, 0, 0, 0) 1.2em); background-image: -o-linear-gradient(bottom, rgba(255, 0, 0, 0.125), rgba(255, 0, 0, 0) 1.2em); background-image: -ms-linear-gradient(bottom, rgba(255, 0, 0, 0.125), rgba(255, 0, 0, 0) 1.2em); background-image: linear-gradient(bottom, rgba(255, 0, 0, 0.125), rgba(255, 0, 0, 0) 1.2em); }
+.overdue { border-style: solid; border-width: 0.063em; padding: 0.538em; margin: 0 -0.6em; border-color: red; }
+.overdue .weektitle { color: red; font-weight: bold; }
 
 .graph { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
 .graph li { list-style-image: none; list-style-type: none; margin-left: 0px; display: -moz-inline-box; -moz-box-orient: vertical; display: inline-block; vertical-align: middle; *vertical-align: auto; white-space: nowrap; }
@@ -353,19 +356,23 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 .areasummary.n99 { width: 118.8em; }
 .areasummary.n100 { width: 120em; }
 
-.areasummary.a1, .area.a1 { background: rgba(0, 128, 0, 0.5); }
-.areasummary.a2, .area.a2 { background: rgba(255, 0, 0, 0.5); }
-.areasummary.a3, .area.a3 { background: rgba(255, 136, 136, 0.5); }
-.areasummary.a4, .area.a4 { background: rgba(0, 0, 255, 0.5); }
+.areasummary.a0, .area.a0 { background: red; }
+.areasummary.a1, .area.a1 { background: rgba(64, 64, 64, 0.5); }
+.areasummary.a2, .area.a2 { background: rgba(153, 51, 51, 0.5); }
+.areasummary.a3, .area.a3 { background: rgba(121, 121, 210, 0.5); }
 
-.chick, .severity, .area { font-size: 0.833em; line-height: 1.44em; padding: 0 0.36em; background: #f2f2f2; }
+.chick, .severity, .area { font-size: 0.833em; line-height: 1.44em; text-shadow: rgba(255, 255, 255, 0.75) 0 1px 0; padding: 0 0.36em; background: #f2f2f2; font-weight: bold; }
 
 .smallprint, .product, .desc { font-size: 0.833em; line-height: 1.44em; font-style: italic; }
 
-.week, .day { margin-bottom: 0.6em; }
+.week { margin-bottom: 0.6em; }
+
+.week, .day { *zoom: 1; }
+.week:after, .day:after { content: ""; display: table; clear: both; }
 
 .bug { overflow: hidden; *zoom: 1; border-top-style: solid; border-top-width: 0.063em; padding-top: 0.538em; padding-bottom: 0.6em; border-color: #f2f2f2; }
-.bug:first-of-type { padding-top: 0.6em; border: 0; }
+.day:last-of-type .bug:last-of-type { border-bottom-style: solid; border-bottom-width: 0.063em; padding-bottom: 0.538em; }
+.overdue .day:last-of-type .bug:last-of-type { padding-bottom: 0; border-bottom: 0; }
 
 @media (min-width: 480px) and (max-width: 959px) { .bughead { display: inline; float: left; width: 65.909%; margin-right: 2.273%; } }
 @media (min-width: 960px) { .bughead { display: inline; float: left; width: 69.388%; margin-right: 2.041%; } }
@@ -376,6 +383,7 @@ footer[role="contentinfo"] { font-size: 0.833em; line-height: 1.44em; margin-top
 @media (min-width: 960px) { .origin { display: inline; float: left; width: 28.571%; margin-right: 2.041%; display: inline; float: right; margin-right: 0; #margin-left: -1em; } }
 @media (min-width: 480px) { .origin { text-align: right; } }
 
+.area { text-shadow: rgba(64, 64, 64, 0.75) 0 1px 0; color: white; }
 @media (max-width: 479px) { .area { margin-right: 0.36em; } }
 
 @media (max-width: 479px) { .product { display: inline; } }

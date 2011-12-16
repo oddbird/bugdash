@@ -1,3 +1,10 @@
+.bugtoggle
+  +columns(2,12)
+  +omega(12)
+  +adjust-font-size-to($smallpx)
+  +trailer(.5,$smallpx)
+  text-align: right
+
 .week
   +clearfix
 
@@ -9,5 +16,9 @@
   text-transform: lowercase
 
 .overdue
-  +padding-trailer(.5)
-  +background-image(linear-gradient(bottom, rgba(red,.125), rgba(red,0) rhythm(1)))
+  +rhythm-borders(1px,.5)
+  margin: 0 0 - rhythm(.5)
+  border-color: red
+  .weektitle
+    color: red
+    font-weight: bold

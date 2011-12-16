@@ -2,26 +2,32 @@
 
 .chick
   +adjust-font-size-to($smallpx)
+  +text-shadow(rgba(#fff,.75) 0 1px 0)
   padding: 0 rhythm(.25,$smallpx)
   background: $lightest
+  font-weight: bold
 
 .smallprint
   +adjust-font-size-to($smallpx)
   +italic
 
 // objects
+.week
+  +trailer(.5)
 
 .week, .day
-  +trailer(.5)
+  +pie-clearfix
 
 .bug
   +clearfix
   +leading-border(1px,.5)
   +padding-trailer(.5)
   border-color: $lightest
-  &:first-of-type
-    +padding-leader(.5)
-    border: 0
+  .day:last-of-type &:last-of-type
+    +trailing-border(1px,.5)
+    .overdue &
+      padding-bottom: 0
+      border-bottom: 0
 
 .bughead
   +media-columns(false,6 9,7 10)
@@ -38,6 +44,8 @@
 
 .area
   @extend .chick
+  +text-shadow(rgba($base,.75) 0 1px 0)
+  color: #fff
   +media-tiny
     margin-right: rhythm(.25,$smallpx)
 
