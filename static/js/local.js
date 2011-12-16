@@ -1,10 +1,14 @@
 function showBugs() {
-    $('.weekview .weektitle').click(function() {
-        $(this).parent().toggleClass('open').toggleClass('closed');
+    $('.weektitle').click(function() {
+        if ($('body').hasClass('weekview')) {
+            $(this).parent().toggleClass('open').toggleClass('closed');
+        };
     });
 
-    $('.dayview .daytitle').click(function() {
-        $(this).parent().toggleClass('open').toggleClass('closed');
+    $('.daytitle').click(function() {
+        if ($('body').hasClass('dayview')) {
+            $(this).parent().toggleClass('open').toggleClass('closed');
+        };
     });
 }
 
@@ -27,14 +31,12 @@ function viewToggle() {
         $(this).addClass('active');
         $('.showday').removeClass('active');
         $('body').removeClass('dayview').addClass('weekview');
-        showBugs();
         return false;
     });
     $('.showday').click(function() {
         $(this).addClass('active');
         $('.showweek').removeClass('active');
         $('body').removeClass('weekview').addClass('dayview');
-        showBugs();
         return false;
     });
 }
