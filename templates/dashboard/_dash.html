@@ -1,35 +1,43 @@
-<a href="#" class="bugtoggle">show bugs »</a>
+<div class="bugdash">
+  <nav class="views">
+    <h2>view:</h2>
+    <a href="#" title="view bug overview" class="showweek active">overview</a>
+    <a href="#" title="view bugs by day" class="showday">day</a>
+  </nav>
 
-{% for interval in intervals %}
-<section class="{% if interval.overdue %}overdue {% else %}week {% endif %}closed">
-  <h2 class="{% if interval.overdue %}overduetitle{% else %}weektitle{% endif %}">
-    <span class="exact">{{ interval.title }}</span>
-  </h2>
+  <a href="#" class="bugtoggle">show bugs »</a>
 
-  <ul class="graph">
-    {% for area in interval.summary %}
-    <li class="areasummary a{{ area.id }} n{{ area.bugcount }}" title="{{ area.name }}: {{ area.bugcount }}">{{ area.name }}: {{ area.bugcount }}</li>
-    {% endfor %}
-  </ul>
-
-  {% for day in interval.days %}
-  <section class="{% if interval.overdue %}overdueday {% else %}day {% endif %}closed">
-    <h3 class="{% if interval.overdue %}overduedaytitle{% else %}daytitle{% endif %}">
-      <time class="due">
-        <span class="exact">{{ day.date|date:"b j" }}</span>
-      </time>
-    </h3>
+  {% for interval in intervals %}
+  <section class="{% if interval.overdue %}overdue {% else %}week {% endif %}closed">
+    <h2 class="{% if interval.overdue %}overduetitle{% else %}weektitle{% endif %}">
+      <span class="exact">{{ interval.title }}</span>
+    </h2>
 
     <ul class="graph">
-      {% for area in day.summary %}
+      {% for area in interval.summary %}
       <li class="areasummary a{{ area.id }} n{{ area.bugcount }}" title="{{ area.name }}: {{ area.bugcount }}">{{ area.name }}: {{ area.bugcount }}</li>
       {% endfor %}
     </ul>
 
-    {% for bug in day.bugs %}
-    {% include "dashboard/_bug.html" with id=1 aid=3 sid=5 desc='1' %}
+    {% for day in interval.days %}
+    <section class="{% if interval.overdue %}overdueday {% else %}day {% endif %}closed">
+      <h3 class="{% if interval.overdue %}overduedaytitle{% else %}daytitle{% endif %}">
+        <time class="due">
+          <span class="exact">{{ day.date|date:"b j" }}</span>
+        </time>
+      </h3>
+
+      <ul class="graph">
+        {% for area in day.summary %}
+        <li class="areasummary a{{ area.id }} n{{ area.bugcount }}" title="{{ area.name }}: {{ area.bugcount }}">{{ area.name }}: {{ area.bugcount }}</li>
+        {% endfor %}
+      </ul>
+
+      {% for bug in day.bugs %}
+      {% include "dashboard/_bug.html" with id=1 aid=3 sid=5 desc='1' %}
+      {% endfor %}
+    </section>
     {% endfor %}
   </section>
   {% endfor %}
-</section>
-{% endfor %}
+</div>

@@ -1,0 +1,66 @@
++media-medium
+
+  .overview
+    +clearfix
+    +leader(2)
+    +trailer(2)
+
+  .area-overview
+    +pie-clearfix
+
+  .area-title
+    +columns(2,12)
+    +padding-leader(1)
+    +trailer(0)
+    text-align: right
+
+  .sparkline
+    +no-style-list
+    +columns(10,12)
+    +omega(12)
+    +background-image(linear-gradient(left, $base, $base 1%, rgba($base,0) 1%, rgba($base,0)))
+    +background-size('15% 100%')
+    background-repeat: repeat-x
+
+  .line
+    +float(left)
+    position: relative
+    width: .5%
+    height: rhythm(2)
+
+  .spark
+    +hide-text
+    +stretch-x
+    bottom: 0
+
+    .a0 &
+      background: red
+    .a1 &
+      background: rgba($base,.5)
+    .a2 &
+      background: rgba($accent,.5)
+    .a3 &
+      background: rgba($alt,.5)
+
+  .spark-key
+    +no-style-list
+    +full(12)
+    margin-left: columns(2,12) + gutter(12)
+    position: relative
+    height: rhythm(1)
+    li
+      position: absolute
+      &:nth-child(1)
+        left: 0
+      &:nth-child(2)
+        left: 15%
+      &:nth-child(3)
+        left: 30%
+      &:nth-child(4)
+        left: 45%
+      &:nth-child(5)
+        left: 60%
+      &:nth-child(6)
+        left: 75%
+      &:nth-child(7)
+        left: 90%

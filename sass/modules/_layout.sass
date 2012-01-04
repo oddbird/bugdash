@@ -17,9 +17,8 @@ header[role="banner"]
     +trailer(0)
 
 .views
-  +media-columns(false,5 9,8 12,omega)
-  +media-small
-    text-align: right
+  +float(left)
+  +trailer
   h2
     +gone
   a
@@ -31,11 +30,6 @@ header[role="banner"]
         +box-shadow(rgba($mid,$xxsmall) 0 0 2px inset)
         background: $lightest
         color: $base
-
-[role="main"]
-  +background-size()
-  background: image-url('graphsketch.png') no-repeat scroll top
-  padding-top: rhythm(15)
 
 footer[role="contentinfo"]
   +leader(2)
